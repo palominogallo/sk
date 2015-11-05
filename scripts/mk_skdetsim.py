@@ -13,11 +13,13 @@ pmax = 260.
 cardtemplate = "/home/santucci/fiTQun/skdetsim/sk4_odtune.card"
 skdetsimscript = "/home/santucci/fiTQun/skdetsim/skdetsim_high.sh" 
 scriptsdir = "/home/palomino/test/"
-outdir = "/disk/usr2/santucci"
+outdir = "/disk/usr2/palomino/test/"
+qgroup = "atmpd"
 
 replacements = {'VECT-NEVT':'VECT-NEVT %s' % nevents, \
         'VECT-MOM':'VECT-MOM %s %s' % (pmin,pmax) }
 linetemp = ""
+os.system("mkdir -p %s/{zbs,log}" % outdir )
 for file in range(0, nfiles):
     os.system("mkdir -p %s/%s" %(outdir,file))
     r1 = random.randint(100000000,1000000000)
@@ -43,3 +45,12 @@ for file in range(0, nfiles):
 
     f2.close()
     f1.close()
+
+f4 = open("%s/castjobs.csh" % scriptsdir, "w")
+f4.write("#!/bin/tcsh -f\n")
+f4.write("set nrun = 0\n")
+f4.write("while ($nrun < %s)\n" % nfiles)
+f4.write("\tcd $nrun\n" )
+f4.write("\tqsub -q %s %s_$nrun.csh\n" % (qgroup,produname) )
+f4.write("\tcd -\n")
+f4.write("\t@ nrun = $nrun + 1\nend") 
