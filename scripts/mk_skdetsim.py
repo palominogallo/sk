@@ -2,6 +2,7 @@
 #f1 cardtemplate
 #f2 card for input
 #f3 c shell script
+#f4 c shell for submit jobs
 
 import sys, os, random
 
@@ -54,3 +55,4 @@ f4.write("\tcd $nrun\n" )
 f4.write("\tqsub -q %s %s_$nrun.csh\n" % (qgroup,produname) )
 f4.write("\tcd -\n")
 f4.write("\t@ nrun = $nrun + 1\nend") 
+f4.close()
