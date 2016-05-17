@@ -2,7 +2,8 @@
 
 set nrun = 0
 #while ($nrun < 52)
-while ($nrun < 52)
+#while ($nrun < 199)
+while ($nrun < 171)
  cd $nrun
  qsub -q all fit_asimov.$nrun.csh
  cd -

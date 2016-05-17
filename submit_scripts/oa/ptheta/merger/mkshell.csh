@@ -3,7 +3,7 @@
 set ana = ptheta
 
 set exedir = /home/palomino/ptheta/Ptheta_MultiSample/Minimal/bin
-set rundir = /home/palomino/ptheta/Ptheta_MultiSample/scripts/$ana/merger
+set rundir = /home/palomino/sk/submit_scripts/oa/$ana/merger
 set iodir  = /disk/usr2/palomino/Fit2015/
 set logdir = $iodir/$ana/merger/log
 
@@ -52,6 +52,14 @@ while ( $i < $n + $nbins )
 		-i $i -ft $iodir/inputs/Throws/Osc_2015_Reac.root -n 10000 >> $shell_name
 	echo $exedir/Merger -t $iodir/$ana/template/tpl_t10k_nu5R14_nubarR56.root -o $iodir/$ana/merger/m10k_delta_t10k_nu5R14_nubarR56/ \
 		-i $i -ft $iodir/inputs/Throws/Osc_2015_Reac.root -n 10000 >> $shell_name
+		#echo $exedir/Merger -t $iodir/$ana/template/tpl_t15k_nuR14_nubarR56.root -o $iodir/$ana/merger/m15k_delta_t15k_nuR14_nubarR56/ \
+			#-i $i -ft $iodir/inputs/Throws/Osc_2015_Reac.root -n 15000 >> $shell_name
+		#echo $exedir/Merger -t $iodir/$ana/template/tpl_t15k_nu5R14_nubarR56.root -o $iodir/$ana/merger/m15k_delta_t15k_nu5R14_nubarR56/ \
+			#-i $i -ft $iodir/inputs/Throws/Osc_2015_Reac.root -n 15000 >> $shell_name
+			#echo $exedir/Merger -t $iodir/$ana/template/tpl_t20k_nuR14_nubarR56.root -o $iodir/$ana/merger/m20k_delta_t20k_nuR14_nubarR56/ \
+				#-i $i -ft $iodir/inputs/Throws/Osc_2015_Reac.root -n 20000 >> $shell_name
+				#echo $exedir/Merger -t $iodir/$ana/template/tpl_t20k_nu5R14_nubarR56.root -o $iodir/$ana/merger/m20k_delta_t20k_nu5R14_nubarR56/ \
+					#-i $i -ft $iodir/inputs/Throws/Osc_2015_Reac.root -n 20000 >> $shell_name
 	#echo $exedir/Merger -t $iodir/$ana/template/tpl_t10k_nuR14_nubarR56.root -o $iodir/$ana/merger/m10k_212222_t10k_nuR14_nubarR56/ \
 		#	-i $i -ft $iodir/inputs/Throws/Osc_2015.root -n 10000 >> $shell_name
 		#echo $exedir/Merger -t $iodir/$ana/template/tpl_t10k_nu5R14_nubarR56.root -o $iodir/$ana/merger/m10k_212222_t10k_nu5R14_nubarR56/ \

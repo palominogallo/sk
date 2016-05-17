@@ -2,7 +2,7 @@
 
 import sys, subprocess
 sys.path.append('/home/palomino/sk/submit_scripts/oa/include')
-import erec_settings
+import erec_settings, settings
 
 if len(sys.argv)!= 4:
 	print('events,  potnu, potnub')
@@ -10,15 +10,15 @@ if len(sys.argv)!= 4:
 
 script, events, potnu, potnub = sys.argv
 ana, mainoutdir, codedir = erec_settings.BASIC()
-potneutrino, potantineutrino = erec_settings.POT(potnu, potnub)
+potneutrino, potantineutrino = settings.POT(potnu, potnub)
 
 nevents = int(float(events) / 1000)
 subprocess.call(codedir+'/bin/MakeTemplate' \
 		+' -f '   +mainoutdir+erec_settings.matrix \
-		+' -pe '  +mainoutdir+'/inputs/NuePDF/numode_nue_binning_J/' \
-		+' -pm '  +mainoutdir+'/inputs/NuMuPDF/numode_numu_binning_J.root' \
-		+' -pbe ' +mainoutdir+'/inputs/NuePDF/antinu_nue_binning_J/' \
-		+' -pbm ' +mainoutdir+'/inputs/NuMuPDF/antinu_numu_binning_J.root' \
+		+' -pe '  +mainoutdir+'/inputs/NuePDF/numode_nue_binning_84/' \
+		+' -pm '  +mainoutdir+'/inputs/NuMuPDF/numode_numu_binning_84.root' \
+		+' -pbe ' +mainoutdir+'/inputs/NuePDF/antinu_nue_binning_84/' \
+		+' -pbm ' +mainoutdir+'/inputs/NuMuPDF/antinu_numu_binning_84.root' \
 		+' -xe '  +mainoutdir+'/inputs/RFNue/nu_beam/' \
 		+' -xmu ' +mainoutdir+'/inputs/RFNuMu/nu_beam/' \
 		+' -xbe ' +mainoutdir+'/inputs/RFNue/nubar_beam/' \

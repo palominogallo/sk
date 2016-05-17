@@ -2,20 +2,22 @@
 
 def POT( potnu, potnub):
 	if potnu == '0.6570':
-		potneu = 'R14'
+		fhc = 'R14'
 	elif potnu == '0.6914':
-		potneu = 'R16'
-	elif potnu == '0.7414':
-		potneu = 'R17'
+		fhc = 'R16'
+	#elif potnu == '0.7414':
+	elif potnu == '0.7120':
+		fhc = 'R17'
 	else:
-		potneu = potnu
+		fhc = potnu
 
 	if potnub == '0.4011':
-		potneub = 'R56'
-	elif potnub == '0.9511':
-		potneub = 'R57'
+		rhc = 'R56'
+	#elif potnub == '0.9511':
+	elif potnub == '0.8230':
+		rhc = 'R57'
 	else:
-		potneub = potnub
+		rhc = potnub
 
-	return potneu, potneub
+	return fhc, rhc
 

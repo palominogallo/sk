@@ -1,7 +1,11 @@
 #! /bin/tcsh
 set ana = erec
+#set mainoutdir = /disk/usr2/palomino/Fit2015/
+set mainoutdir = /disk/usr2/palomino/NuMu16/
 
-set maindir = /disk/usr2/palomino/Fit2015/
+#set codedir = $HOME/ptheta/Erec/Minimal/
+set codedir = $HOME/ptheta/P-theta/Minimal/
+
 set events = $1
 set mode = $2
 set potnu = $3
@@ -26,24 +30,24 @@ else
 	set potantineutrino = $potnub
 endif
 
-cd $HOME/ptheta/Ptheta_MultiSample/Minimal/bin
+cd $codedir/bin
 
 time	./GenerateXP \
-	-f $maindir/inputs/Matrix/FullErecMatrix_postfit_xsec2015c.root \
-	-pe $maindir/inputs/NuePDF/numode_nue_binning_J/ \
-	-pm $maindir/inputs/NumuPDF/numode_numu_binning_J.root \
-	-pbe $maindir/inputs/NuePDF/antinu_nue_binning_J/ \
-	-pbm $maindir/inputs/NumuPDF/antinu_numu_binning_J.root \
-	-xe  $maindir//inputs/RFnue/nu_beam/ \
-	-xmu $maindir/inputs/RFnumu/nu_beam/ \
-	-xbe $maindir/inputs/RFnue/nubar_beam/ \
-	-xbmu $maindir/inputs/RFnumu/nubar_beam/ \
+	-f $mainoutdir/inputs/Matrix/FullErecMatrix_postfit_xsec2015c.root \
+	-pe $mainoutdir/inputs/NuePDF/numode_nue_binning_J/ \
+	-pm $mainoutdir/inputs/NuMuPDF/numode_numu_binning_J.root \
+	-pbe $mainoutdir/inputs/NuePDF/antinu_nue_binning_J/ \
+	-pbm $mainoutdir/inputs/NuMuPDF/antinu_numu_binning_J.root \
+	-xe  $mainoutdir//inputs/RFNue/nu_beam/ \
+	-xmu $mainoutdir/inputs/RFNuMu/nu_beam/ \
+	-xbe $mainoutdir/inputs/RFNue/nubar_beam/ \
+	-xbmu $mainoutdir/inputs/RFNuMu/nubar_beam/ \
 	-tnb $potnub \
 	-tnu $potnu \
 	-n $events \
 	-m $mode \
 	-s $sys \
-	-sf $maindir/inputs/SplineFile/weightsv8_t2ksk.14a.neut5.3.2.13a_tuned_v1r0.250ka.fine.numubar_x_numubar_numuselec.root \
-	-o $maindir/${ana}/generate/gen_n${nevents}k_m${mode}_nu${potneutrino}_nubar${potantineutrino}_s${sys}.root
+	-sf $mainoutdir/inputs/SplineFile/weightsv8_t2ksk.14a.neut5.3.2.13a_tuned_v1r0.250ka.fine.numubar_x_numubar_numuselec.root \
+	-o $mainoutdir/${ana}/generate/gen_n${nevents}k_m${mode}_nu${potneutrino}_nubar${potantineutrino}_s${sys}.root
 
 cd -
