@@ -10,8 +10,8 @@ cd $execdir
 pwd
 
 time	./Tester2015 \
-	-f $maindir/inputs/Matrix/FullPthetaMatrix_postfit_xsec2015c_1p1h.root \
+	-f $maindir/inputs/Matrix/FullPthetaMatrix_postfit_xsec2015c_1p1h_run1-7c.root \
 	-n $events \
-	-o $maindir/inputs/Throws/sys_throws_${ana}_xsec2015c_1p1h.root
+	-o $maindir/inputs/Throws/sys_throws_${ana}_xsec2015c_1p1h_run1-7c.root
 
 cd -

@@ -6,5 +6,5 @@ def BASIC():
 	exedir = '/home/palomino/ptheta/P-theta/Minimal/'
 	return agroup, outdir, exedir
 
-matrix    = '/inputs/Matrix/FullPthetaMatrix_postfit_xsec2015c_1p1h.root'
-systhrows = '/inputs/Throws/sys_throws_ptheta_xsec2015c_1p1h.root'
+matrix    = '/inputs/Matrix/FullPthetaMatrix_postfit_xsec2015c_1p1h_run1-7c.root'
+systhrows = '/inputs/Throws/sys_throws_ptheta_xsec2015c_1p1h_run1-7c.root'

@@ -28,8 +28,7 @@ rhc	= {\
 for key in fhc:
 	subprocess.call(codedir+'/Tools/NueSeed/NueSeed' \
 		+' -f ' +mainoutdir+'/inputs/mtuples_cccohwgt_flux5c-6e/FHC/'+fhc[key] \
-		#+' -o ' +mainoutdir+'/inputs/NuePDF/numode_nue_binning_201/' \
-		+' -o ' +mainoutdir+'/inputs/NuePDF/numode_nue_binning_84/' \
+		+' -o ' +mainoutdir+'/inputs/NuePDF/numode_nue_binning_84_8/' \
 		+' -n ' +key \
 		+' -m 0' \
 		, shell=True)
@@ -38,8 +37,7 @@ for key in fhc:
 for key in rhc:
 	subprocess.call(codedir+'/Tools/NueSeed/NueSeed' \
 		+' -f ' +mainoutdir+'/inputs/mtuples_cccohwgt_flux5c-6e/RHC/'+rhc[key] \
-		#+' -o ' +mainoutdir+'/inputs/NuePDF/antinu_nue_binning_201/' \
-		+' -o ' +mainoutdir+'/inputs/NuePDF/antinu_nue_binning_84/' \
+		+' -o ' +mainoutdir+'/inputs/NuePDF/antinu_nue_binning_84_8/' \
 		+' -n ' +key \
 		+' -m 1'\
 		, shell=True)

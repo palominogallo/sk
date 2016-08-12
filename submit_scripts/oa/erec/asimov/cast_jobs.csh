@@ -1,9 +1,9 @@
 #!/bin/csh -f
 
 set nrun = 0
-#while ($nrun < 52)
-#while ($nrun < 199)
-while ($nrun < 171)
+while ($nrun < 171) #delta vs theta23
+#while ($nrun < 111) #delta
+#while ($nrun < 183) #theta23
  cd $nrun
  qsub -q all fit_asimov.$nrun.csh
  cd -
